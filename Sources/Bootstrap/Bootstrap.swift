@@ -16,7 +16,8 @@ public final class BootstrapProvider: Provider {
 extension BootstrapProvider {
     public static var tags: [String: TagRenderer] {
         return [
-            "bs:button": ButtonTag()
+            "bs:button": ButtonTag(),
+            "bs:alert": AlertTag()
         ]
     }
 }

@@ -1,7 +1,7 @@
 import Leaf
 import TemplateKit
 
-public final class ButtonTag: TagRenderer {
+public final class AlertTag: TagRenderer {
     public enum Keys: String {
         case primary = "primary"
         case secondary = "secondary"
@@ -11,12 +11,9 @@ public final class ButtonTag: TagRenderer {
         case info = "info"
         case light = "light"
         case dark = "dark"
-        case link = "link"
     }
 
     public func render(tag: TagContext) throws -> EventLoopFuture<TemplateData> {
-        let body = try tag.requireBody()
-
         var style = "primary"
         var classes: String?
         var attributes: String?
@@ -51,17 +48,18 @@ public final class ButtonTag: TagRenderer {
             }
         }
 
-        guard let parsedType = Keys(rawValue: style) else {
+        guard let parsedStyle = Keys(rawValue: style) else {
             throw tag.error(reason: "Wrong argument given: \(style)")
         }
 
-        // no required parameter
-        // 1: optional-style, 2. optional-classes 3. optional-attributes
-        // body: unescaped html
+        guard let body = tag.body else {
+            throw tag.error(reason: "Wrong body given: \(String(describing: tag.body))")
+        }
 
         return tag.serializer.serialize(ast: body).map(to: TemplateData.self) { er in
-            let button = "<button type=\"button\" class=\"btn btn-\(style) \(classes ?? "")\" \(attributes ?? "")>\(String(data: er.data, encoding: .utf8) ?? "")</button>"
-            return .string(button)
+            let body = String(data: er.data, encoding: .utf8) ?? ""
+            let alert = "<div class='alert alert-\(parsedStyle) \(classes ?? "")\" \(attributes ?? "")' role='alert'>\(body)</div>"
+            return .string(alert)
         }
     }
 }
