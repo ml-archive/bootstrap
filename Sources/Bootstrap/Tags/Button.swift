@@ -66,12 +66,10 @@ public final class ButtonTag: TagRenderer {
         // body: unescaped html
 
         return tag.serializer.serialize(ast: body).map(to: TemplateData.self) { body in
-
             let c = "btn btn-\(parsedStyle) \(classes)"
             let b = String(data: body.data, encoding: .utf8) ?? ""
 
-        return tag.serializer.serialize(ast: body).map(to: TemplateData.self) { er in
-            let button = "<button type='button' class='\(c)' \(attributes)>\(b)</button>"
+            let button = "<button class='\(c)' \(attributes)>\(b)</button>"
             return .string(button)
         }
     }
