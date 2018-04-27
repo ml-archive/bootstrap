@@ -17,7 +17,14 @@ extension BootstrapProvider {
     public static var tags: [String: TagRenderer] {
         return [
             "bs:button": ButtonTag(),
-            "bs:alert": AlertTag()
+//            "bs:alert": AlertTag(),
+            "bs:input": InputTag()
         ]
+    }
+}
+
+extension Array {
+    subscript(safe index: Int) -> Element? {
+        return indices.contains(index) ? self[index] : nil
     }
 }

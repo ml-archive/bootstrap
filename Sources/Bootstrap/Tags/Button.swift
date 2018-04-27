@@ -21,39 +21,17 @@ public final class ButtonTag: TagRenderer {
         var classes = ""
         var attributes = ""
 
-        if tag.parameters.count > 0 {
-            guard let param = tag.parameters[0].string else {
-                throw tag.error(
-                    reason: "Wrong type given (expected a string): \(type(of: tag.parameters[0]))"
-                )
-            }
-
-            if !param.isEmpty {
-                style = param
-            }
-        }
-
-        if tag.parameters.count > 1 {
-            guard let param = tag.parameters[1].string else {
-                throw tag.error(
-                    reason: "Wrong type given (expected a string): \(type(of: tag.parameters[1]))"
-                )
-            }
-
-            if !param.isEmpty {
-                classes = param
-            }
-        }
-
-        if tag.parameters.count > 2 {
-            guard let param = tag.parameters[2].string else {
-                throw tag.error(
-                    reason: "Wrong type given (expected a string): \(type(of: tag.parameters[2]))"
-                )
-            }
-
-            if !param.isEmpty {
-                attributes = param
+        for index in 0...2 {
+            if
+                let param = tag.parameters[safe: index]?.string,
+                !param.isEmpty
+            {
+                switch index {
+                case 0: style = param
+                case 1: classes = param
+                case 2: attributes = param
+                default: ()
+                }
             }
         }
 
