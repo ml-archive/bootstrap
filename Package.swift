@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "Boostrap",
+    name: "Bootstrap",
     products: [
         .library(name: "Bootstrap", targets: ["Bootstrap"])
     ],
