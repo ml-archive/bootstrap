@@ -39,10 +39,6 @@ public final class ButtonTag: TagRenderer {
             throw tag.error(reason: "Wrong argument given: \(style)")
         }
 
-        // no required parameter
-        // 1: optional-style, 2. optional-classes 3. optional-attributes
-        // body: unescaped html
-
         return tag.serializer.serialize(ast: body).map(to: TemplateData.self) { body in
             let c = "btn btn-\(parsedStyle) \(classes)"
             let b = String(data: body.data, encoding: .utf8) ?? ""
