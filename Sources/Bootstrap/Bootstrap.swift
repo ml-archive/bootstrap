@@ -17,8 +17,9 @@ extension BootstrapProvider {
     public static var tags: [String: TagRenderer] {
         return [
             "bs:button": ButtonTag(),
-//            "bs:alert": AlertTag(),
-            "bs:input": InputTag()
+            "bs:alert": AlertTag(),
+            "bs:input": InputTag(),
+            "bs:badge": BadgeTag()
         ]
     }
 }
