@@ -4,6 +4,8 @@ import Leaf
 public final class BootstrapProvider: Provider {
     public static let repositoryName = "bootstrap"
 
+    public init() {}
+
     public func register(_ services: inout Services) throws {
         try services.register(LeafProvider())
     }
