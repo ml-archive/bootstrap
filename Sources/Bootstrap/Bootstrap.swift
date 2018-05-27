@@ -29,3 +29,25 @@ extension Array {
         return indices.contains(index) ? self[index] : nil
     }
 }
+
+/// Bootstrap Color Definitions
+///
+enum ColorKeys: String {
+    /// Bootstrap Primary Color
+    case primary    = "primary"
+    /// Bootstrap Secondary Color
+    case secondary  = "secondary"
+    /// Bootstrap Success Color
+    case success    = "success"
+    /// Bootstrap Danger Color
+    case danger     = "danger"
+    /// Bootstrap Warning Color
+    case warning    = "warning"
+    /// Bootstrap Info Color
+    case info       = "info"
+    /// Bootstrap Light Color
+    case light      = "light"
+    /// Bootstrap Dark Color
+    case dark       = "dark"
+}
+
