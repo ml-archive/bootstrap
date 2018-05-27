@@ -3,7 +3,7 @@ import TemplateKit
 
 public final class BadgeTag: TagRenderer {
 
-    public func render(tag: TagContext) throws -> EventLoopFuture<TemplateData> {
+    public func render(tag: TagContext) throws -> Future<TemplateData> {
         let body = try tag.requireBody()
 
         var style = ColorKeys.primary.rawValue

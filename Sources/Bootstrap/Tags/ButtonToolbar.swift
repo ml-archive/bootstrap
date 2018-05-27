@@ -5,12 +5,10 @@ import TemplateKit
 public final class ButtonToolbarTag: TagRenderer {
     private static let paramCount: Int = 2
 
-    public func render(tag: TagContext) throws -> EventLoopFuture<TemplateData> {
+    public func render(tag: TagContext) throws -> Future<TemplateData> {
         let body = try tag.requireBody()
 
-        guard tag.parameters.count <= ButtonToolbarTag.paramCount else {
-            throw tag.error(reason: "Wrong Parameter Count: \(tag.parameters.count) Expecting <= \(ButtonToolbarTag.paramCount)")
-        }
+        try tag.requireUpToParameterCount(ButtonToolbarTag.paramCount)
 
         var classes = ""
         var aria = UUID().uuidString

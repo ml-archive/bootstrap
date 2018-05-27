@@ -34,24 +34,34 @@ extension Array {
     }
 }
 
+
+extension TagContext {
+    /// Throws an error if the parameter count contains more then the supplied number `n`.
+    public func requireUpToParameterCount(_ n: Int) throws {
+        guard parameters.count <= n else {
+            throw error(reason: "Invalid parameter count: \(parameters.count)/\(n)")
+        }
+    }
+
+}
+
 /// Bootstrap Color Definitions
-///
 enum ColorKeys: String {
     /// Bootstrap Primary Color
-    case primary    = "primary"
+    case primary
     /// Bootstrap Secondary Color
-    case secondary  = "secondary"
+    case secondary
     /// Bootstrap Success Color
-    case success    = "success"
+    case success
     /// Bootstrap Danger Color
-    case danger     = "danger"
+    case danger
     /// Bootstrap Warning Color
-    case warning    = "warning"
+    case warning
     /// Bootstrap Info Color
-    case info       = "info"
+    case info
     /// Bootstrap Light Color
-    case light      = "light"
+    case light
     /// Bootstrap Dark Color
-    case dark       = "dark"
+    case dark
 }
 

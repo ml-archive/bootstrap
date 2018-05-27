@@ -10,13 +10,11 @@ public final class ButtonGroupTag: TagRenderer {
 
     private static let paramCount: Int = 3
 
-    public func render(tag: TagContext) throws -> EventLoopFuture<TemplateData> {
+    public func render(tag: TagContext) throws -> Future<TemplateData> {
 
         let body = try tag.requireBody()
 
-        guard tag.parameters.count <= ButtonGroupTag.paramCount else {
-            throw tag.error(reason: "Wrong Parameter Count: \(tag.parameters.count) Expecting <= \(ButtonGroupTag.paramCount)")
-        }
+        try tag.requireUpToParameterCount(ButtonGroupTag.paramCount)
 
         var group = GroupKeys.standard.rawValue
         var classes: String?
@@ -27,7 +25,7 @@ public final class ButtonGroupTag: TagRenderer {
                 throw tag.error(reason: "Wrong type given (expected a bool): \(type(of: tag.parameters[0]))")
             }
 
-            if param == true {
+            if param {
                 group = GroupKeys.vertical.rawValue
             }
         }

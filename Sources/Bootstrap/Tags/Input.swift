@@ -8,7 +8,7 @@ public final class InputTag: TagRenderer {
         case password = "password"
     }
 
-    public func render(tag: TagContext) throws -> EventLoopFuture<TemplateData> {
+    public func render(tag: TagContext) throws -> Future<TemplateData> {
         var inputType = "text"
         var classes = "form-control"
         var attributes = ""

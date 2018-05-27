@@ -1,4 +1,4 @@
-# Boostrap 🍃
+# Bootstrap 🍃
 
 A Leaf wrapper for Bootstrap
 
