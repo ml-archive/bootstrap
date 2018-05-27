@@ -14,7 +14,7 @@ public final class ButtonGroupTag: TagRenderer {
 
         let body = try tag.requireBody()
 
-        try tag.requireUpToParameterCount(ButtonGroupTag.paramCount)
+        try tag.requireParameterCount(upTo: ButtonGroupTag.paramCount)
 
         var group = GroupKeys.standard.rawValue
         var classes: String?

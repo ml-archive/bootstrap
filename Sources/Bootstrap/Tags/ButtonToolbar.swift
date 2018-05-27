@@ -8,7 +8,7 @@ public final class ButtonToolbarTag: TagRenderer {
     public func render(tag: TagContext) throws -> Future<TemplateData> {
         let body = try tag.requireBody()
 
-        try tag.requireUpToParameterCount(ButtonToolbarTag.paramCount)
+        try tag.requireParameterCount(upTo: ButtonToolbarTag.paramCount)
 
         var classes = ""
         var aria = UUID().uuidString
