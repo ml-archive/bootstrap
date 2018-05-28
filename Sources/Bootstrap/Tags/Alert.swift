@@ -21,7 +21,7 @@ public final class AlertTag: TagRenderer {
 
         if tag.parameters.count > 1 {
             guard let param = tag.parameters[1].string else {
-                throw tag.error(reason: "Wrong type given (expected a string): \(type(of: tag.parameters[0]))")
+                throw tag.error(reason: "Wrong type given (expected a string): \(type(of: tag.parameters[1]))")
             }
 
             if param.count > 0 {
@@ -31,7 +31,7 @@ public final class AlertTag: TagRenderer {
 
         if tag.parameters.count > 2 {
             guard let param = tag.parameters[2].string else {
-                throw tag.error(reason: "Wrong type given (expected a string): \(type(of: tag.parameters[0]))")
+                throw tag.error(reason: "Wrong type given (expected a string): \(type(of: tag.parameters[2]))")
             }
 
             if param.count > 0 {

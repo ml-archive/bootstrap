@@ -11,7 +11,6 @@ public final class ButtonGroupTag: TagRenderer {
     private static let paramCount: Int = 3
 
     public func render(tag: TagContext) throws -> Future<TemplateData> {
-
         let body = try tag.requireBody()
 
         try tag.requireParameterCount(upTo: ButtonGroupTag.paramCount)
@@ -32,7 +31,7 @@ public final class ButtonGroupTag: TagRenderer {
 
         if tag.parameters.count > 1 {
             guard let param = tag.parameters[1].string else {
-                throw tag.error(reason: "Wrong type given (expected a string): \(type(of: tag.parameters[0]))")
+                throw tag.error(reason: "Wrong type given (expected a string): \(type(of: tag.parameters[1]))")
             }
 
             if param.count > 0 {
@@ -42,7 +41,7 @@ public final class ButtonGroupTag: TagRenderer {
 
         if tag.parameters.count > 2 {
             guard let param = tag.parameters[2].string else {
-                throw tag.error(reason: "Wrong type given (expected a string): \(type(of: tag.parameters[0]))")
+                throw tag.error(reason: "Wrong type given (expected a string): \(type(of: tag.parameters[2]))")
             }
 
             if param.count > 0 {
