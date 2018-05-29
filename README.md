@@ -5,7 +5,27 @@ A Leaf wrapper for Bootstrap
 
 # Installation
 
-coming soon
+In your configure.swift file:
+
+```
+/// Called before your application initializes.
+public func configure(_ config: inout Config, _ env: inout Environment, _ services: inout Services) throws {
+
+    /// Register providers first
+    try services.register(BootstrapProvider())
+
+    ....
+    
+    services.register { _ -> LeafTagConfig in
+        var tags = LeafTagConfig.default()
+        
+        for tag in BootstrapProvider.tags {
+            tags.use(tag.value, as: tag.key)
+        }
+        return tags
+    }
+}
+```
 
 # Getting started 🚀
 
