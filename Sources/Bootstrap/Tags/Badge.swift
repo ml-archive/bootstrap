@@ -2,21 +2,11 @@ import Leaf
 import TemplateKit
 
 public final class BadgeTag: TagRenderer {
-    public enum Keys: String {
-        case primary = "primary"
-        case secondary = "secondary"
-        case success = "success"
-        case danger = "danger"
-        case warning = "warning"
-        case info = "info"
-        case light = "light"
-        case dark = "dark"
-    }
 
-    public func render(tag: TagContext) throws -> EventLoopFuture<TemplateData> {
+    public func render(tag: TagContext) throws -> Future<TemplateData> {
         let body = try tag.requireBody()
 
-        var style = "primary"
+        var style = ColorKeys.primary.rawValue
         var classes = ""
         var attributes = ""
 
@@ -34,7 +24,7 @@ public final class BadgeTag: TagRenderer {
             }
         }
 
-        guard let parsedStyle = Keys(rawValue: style) else {
+        guard let parsedStyle = ColorKeys(rawValue: style) else {
             throw tag.error(reason: "Wrong argument given: \(style)")
         }
 

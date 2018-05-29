@@ -1,20 +1,11 @@
 import Leaf
 import TemplateKit
 
+/// Bootstrap Alert Tag
 public final class AlertTag: TagRenderer {
-    public enum Keys: String {
-        case primary = "primary"
-        case secondary = "secondary"
-        case success = "success"
-        case danger = "danger"
-        case warning = "warning"
-        case info = "info"
-        case light = "light"
-        case dark = "dark"
-    }
 
-    public func render(tag: TagContext) throws -> EventLoopFuture<TemplateData> {
-        var style = "primary"
+    public func render(tag: TagContext) throws -> Future<TemplateData> {
+        var style = ColorKeys.primary.rawValue
         var classes: String?
         var attributes: String?
 
@@ -30,7 +21,7 @@ public final class AlertTag: TagRenderer {
 
         if tag.parameters.count > 1 {
             guard let param = tag.parameters[1].string else {
-                throw tag.error(reason: "Wrong type given (expected a string): \(type(of: tag.parameters[0]))")
+                throw tag.error(reason: "Wrong type given (expected a string): \(type(of: tag.parameters[1]))")
             }
 
             if param.count > 0 {
@@ -40,7 +31,7 @@ public final class AlertTag: TagRenderer {
 
         if tag.parameters.count > 2 {
             guard let param = tag.parameters[2].string else {
-                throw tag.error(reason: "Wrong type given (expected a string): \(type(of: tag.parameters[0]))")
+                throw tag.error(reason: "Wrong type given (expected a string): \(type(of: tag.parameters[2]))")
             }
 
             if param.count > 0 {
@@ -48,7 +39,7 @@ public final class AlertTag: TagRenderer {
             }
         }
 
-        guard let parsedStyle = Keys(rawValue: style) else {
+        guard let parsedStyle = ColorKeys(rawValue: style) else {
             throw tag.error(reason: "Wrong argument given: \(style)")
         }
 
@@ -58,7 +49,14 @@ public final class AlertTag: TagRenderer {
 
         return tag.serializer.serialize(ast: body).map(to: TemplateData.self) { er in
             let body = String(data: er.data, encoding: .utf8) ?? ""
-            let alert = "<div class='alert alert-\(parsedStyle) \(classes ?? "")\" \(attributes ?? "")' role='alert'>\(body)</div>"
+
+            var alert = "<div class=\"alert alert-\(parsedStyle)"
+            if let classes = classes {
+                alert += " \(classes)"
+            }
+
+            alert += "\" \(attributes ?? "") role='alert'>\(body)</div>"
+
             return .string(alert)
         }
     }

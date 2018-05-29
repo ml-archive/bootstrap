@@ -14,7 +14,7 @@ public final class ButtonTag: TagRenderer {
         case link = "link"
     }
 
-    public func render(tag: TagContext) throws -> EventLoopFuture<TemplateData> {
+    public func render(tag: TagContext) throws -> Future<TemplateData> {
         let body = try tag.requireBody()
 
         var style = "primary"
