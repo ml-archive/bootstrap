@@ -93,9 +93,9 @@ TODO
 
 ```
 #bs:buttonToolbar() {
-#bs:button() { First Option }
-#bs:button("danger") { Second Option}
-#bs:button() { Third Option}
+    #bs:button() { First Option }
+    #bs:button("danger") { Second Option}
+    #bs:button() { Third Option}
 }
 ```
 
