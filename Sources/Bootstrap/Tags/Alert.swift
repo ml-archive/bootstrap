@@ -3,7 +3,6 @@ import TemplateKit
 
 /// Bootstrap Alert Tag
 public final class AlertTag: TagRenderer {
-
     public func render(tag: TagContext) throws -> Future<TemplateData> {
         var style = ColorKeys.primary.rawValue
         var classes: String?
