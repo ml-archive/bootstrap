@@ -2,22 +2,10 @@ import Leaf
 import TemplateKit
 
 public final class ButtonTag: TagRenderer {
-    public enum Keys: String {
-        case primary = "primary"
-        case secondary = "secondary"
-        case success = "success"
-        case danger = "danger"
-        case warning = "warning"
-        case info = "info"
-        case light = "light"
-        case dark = "dark"
-        case link = "link"
-    }
-
     public func render(tag: TagContext) throws -> Future<TemplateData> {
         let body = try tag.requireBody()
 
-        var style = "primary"
+        var style = ColorKeys.primary.rawValue
         var classes = ""
         var attributes = ""
 
