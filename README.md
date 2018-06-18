@@ -8,44 +8,42 @@
 [![Readme Score](http://readme-score-api.herokuapp.com/score.svg?url=https://github.com/nodes-vapor/bootstrap)](http://clayallsopp.github.io/readme-score?url=https://github.com/nodes-vapor/bootstrap)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/nodes-vapor/bootstrap/master/LICENSE)
 
-A Leaf wrapper for Bootstrap
+This package wraps Bootstrap elements into convenient Leaf-Tags.
 
 
 # Installation
 
 Update your `Package.swift` file.
 ```swift
-.package(url: "https://github.com/nodes-vapor/bootstrap.git", from: "1.0.0-alpha")
+.package(url: "https://github.com/nodes-vapor/bootstrap.git", from: "1.0.0")
 ```
 
 ## Getting started 🚀
 
-First make sure that you've imported Bootstrap everywhere when needed:
+First import Bootstrap and Leaf inside your `configure.swift`
 
 ```swift
 import Bootstrap
+import Leaf
 ```
 
 ### Adding the provider
 
 ```swift
-public func register(_ services: inout Services) throws {
-    try services.register(BootstrapProvider())
-}
+try services.register(BootstrapProvider())
 ```
 
 ### Adding the Leaf tags
 
 ```swift 
-public func register(_ services: inout Services) throws {
-    services.register { _ -> LeafTagConfig in
-        var tags = LeafTagConfig.default()
-        
-        for tag in BootstrapProvider.tags {
-            tags.use(tag.value, as: tag.key)
-        }
-        return tags
-    }
+services.register { _ -> LeafTagConfig in
+  var tags = LeafTagConfig.default()
+
+  for tag in BootstrapProvider.tags {
+    tags.use(tag.value, as: tag.key)
+  }
+
+  return tags
 }
 ```
 
@@ -60,15 +58,21 @@ public func register(_ services: inout Services) throws {
 
 ### Alert
 
-TODO
+```
+#bs:alert() { alert text }
+```
 
 ### Badge
 
-TODO
+```
+#bs:badge(type?, classExtras?, attributes?) { badge text }
+```
 
 ### Button
 
-TODO
+```
+#bs:button(type?, classExtras?, attributes?) { btn text }
+```
 
 ### Button Group
 
@@ -101,7 +105,9 @@ TODO
 
 ### Input
 
-TODO
+```
+#bs:input(type?, classExtras?, attributes?)
+```
 
 ## 🏆 Credits
 
