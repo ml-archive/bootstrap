@@ -1,5 +1,5 @@
-import Vapor
 import Leaf
+import Vapor
 
 public final class BootstrapProvider: Provider {
     public static let repositoryName = "bootstrap"
@@ -11,20 +11,15 @@ public final class BootstrapProvider: Provider {
     }
 
     public func didBoot(_ container: Container) throws -> EventLoopFuture<Void> {
-        return .done(on: container)
-    }
-}
+        let tags = try container.make(LeafTagConfig.self)
+        tags.use(ButtonTag(), as: "bs:button")
+        tags.use(ButtonGroupTag(), as: "bs:buttonGroup")
+        tags.use(ButtonToolbarTag(), as: "bs:buttonToolbar")
+        tags.use(AlertTag(), as: "bs:alert")
+        tags.use(InputTag(), as: "bs:input")
+        tags.use(BadgeTag(), as: "bs:badge")
 
-extension BootstrapProvider {
-    public static var tags: [String: TagRenderer] {
-        return [
-            "bs:button": ButtonTag(),
-            "bs:buttonGroup": ButtonGroupTag(),
-            "bs:buttonToolbar": ButtonToolbarTag(),
-            "bs:alert": AlertTag(),
-            "bs:input": InputTag(),
-            "bs:badge": BadgeTag()
-        ]
+        return .done(on: container)
     }
 }
 
@@ -33,7 +28,6 @@ extension Array {
         return indices.contains(index) ? self[index] : nil
     }
 }
-
 
 extension TagContext {
     /// Throws an error if the parameter count contains more then the supplied number `n`.
@@ -63,4 +57,3 @@ enum ColorKeys: String {
     /// Bootstrap Dark Color
     case dark
 }
-
