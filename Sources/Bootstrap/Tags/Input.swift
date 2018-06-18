@@ -3,13 +3,13 @@ import TemplateKit
 
 public final class InputTag: TagRenderer {
     enum Keys: String {
-        case text = "text"
-        case email = "email"
-        case password = "password"
+        case text
+        case email
+        case password
     }
 
     public func render(tag: TagContext) throws -> Future<TemplateData> {
-        var inputType = "text"
+        var inputType = Keys.text.rawValue
         var classes = "form-control"
         var attributes = ""
 
