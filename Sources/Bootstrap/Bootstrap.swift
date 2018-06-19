@@ -23,7 +23,9 @@ extension BootstrapProvider {
             "bs:buttonToolbar": ButtonToolbarTag(),
             "bs:alert": AlertTag(),
             "bs:input": InputTag(),
-            "bs:badge": BadgeTag()
+            "bs:badge": BadgeTag(),
+            "bs:breadCrumb": BreadCrumbTag(),
+            "bs:breadCrumbItem": BreadCrumbItemTag()
         ]
     }
 }

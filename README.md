@@ -55,6 +55,7 @@ services.register { _ -> LeafTagConfig in
 - [Button Group](#button-group)
 - [Button Toolbar](#button-toolbar)
 - [Input](#input)
+- [Breadcrumb](#breadcrumb)
 
 ### Alert
 
@@ -107,6 +108,15 @@ services.register { _ -> LeafTagConfig in
 
 ```
 #bs:input(type?, classExtras?, attributes?)
+```
+
+### Breadcrumb
+
+```
+#bs:breadcrumb(classExtras?, attributes?) {
+  #bs:breadcrumbItem(classExtras?, attributes?) { <a href="/"> Home </a> }
+  #bs:breadcrumbItem(classExtras?, attributes?) { Profile }
+}
 ```
 
 ## 🏆 Credits
