@@ -14,12 +14,14 @@ public final class BootstrapProvider: Provider {
 
     public func didBoot(_ container: Container) throws -> EventLoopFuture<Void> {
         let tags: MutableLeafTagConfig = try container.make()
-        tags.use(ButtonTag(), as: "bs:button")
-        tags.use(ButtonGroupTag(), as: "bs:buttonGroup")
-        tags.use(ButtonToolbarTag(), as: "bs:buttonToolbar")
-        tags.use(AlertTag(), as: "bs:alert")
-        tags.use(InputTag(), as: "bs:input")
-        tags.use(BadgeTag(), as: "bs:badge")
+        tags.use([
+            "bs:button": ButtonTag(),
+            "bs:buttonGroup": ButtonGroupTag(),
+            "bs:buttonToolbar": ButtonToolbarTag(),
+            "bs:alert": AlertTag(),
+            "bs:input": InputTag(),
+            "bs:badge": BadgeTag()
+        ])
 
         return .done(on: container)
     }
