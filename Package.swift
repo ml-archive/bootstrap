@@ -7,11 +7,13 @@ let package = Package(
         .library(name: "Bootstrap", targets: ["Bootstrap"])
     ],
     dependencies: [
+        .package(url: "https://github.com/vapor/leaf.git", from: "3.0.0-rc"),
         .package(url: "https://github.com/vapor/vapor.git", from: "3.0.0"),
-        .package(url: "https://github.com/vapor/leaf.git", from: "3.0.0-rc")
+
+        .package(url: "https://github.com/nodes-vapor/sugar.git", from: "3.0.0-beta")
     ],
     targets: [
-        .target(name: "Bootstrap", dependencies: ["Vapor", "Leaf"]),
-        .testTarget(name: "BootstrapTests", dependencies: ["Bootstrap", "Vapor"])
+        .target(name: "Bootstrap", dependencies: ["Leaf", "Vapor", "Sugar"]),
+        .testTarget(name: "BootstrapTests", dependencies: ["Bootstrap"])
     ]
 )
