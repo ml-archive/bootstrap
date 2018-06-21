@@ -1,4 +1,5 @@
 import Leaf
+import Sugar
 import Vapor
 
 public final class BootstrapProvider: Provider {
@@ -8,10 +9,11 @@ public final class BootstrapProvider: Provider {
 
     public func register(_ services: inout Services) throws {
         try services.register(LeafProvider())
+        try services.register(MutableLeafTagConfigProvider())
     }
 
     public func didBoot(_ container: Container) throws -> EventLoopFuture<Void> {
-        let tags = try container.make(LeafTagConfig.self)
+        let tags: MutableLeafTagConfig = try container.make()
         tags.use(ButtonTag(), as: "bs:button")
         tags.use(ButtonGroupTag(), as: "bs:buttonGroup")
         tags.use(ButtonToolbarTag(), as: "bs:buttonToolbar")
