@@ -37,7 +37,7 @@ public final class BreadCrumbTag: TagRenderer {
 }
 
 public final class BreadCrumbItemTag: TagRenderer {
-    public func render(tag: TagContext) throws -> EventLoopFuture<TemplateData> {
+    public func render(tag: TagContext) throws -> Future<TemplateData> {
         let body = try tag.requireBody()
         var classes = ""
         var attributes = ""
