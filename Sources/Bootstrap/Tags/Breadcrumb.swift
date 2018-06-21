@@ -2,7 +2,6 @@ import Leaf
 import TemplateKit
 
 public final class BreadCrumbTag: TagRenderer {
-
     public func render(tag: TagContext) throws -> Future<TemplateData> {
         let body = try tag.requireBody()
         var classes = ""
