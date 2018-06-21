@@ -20,7 +20,9 @@ public final class BootstrapProvider: Provider {
             "bs:buttonToolbar": ButtonToolbarTag(),
             "bs:alert": AlertTag(),
             "bs:input": InputTag(),
-            "bs:badge": BadgeTag()
+            "bs:badge": BadgeTag(),
+            "bs:breadCrumb": BreadCrumbTag(),
+            "bs:breadCrumbItem": BreadCrumbItemTag()
         ])
 
         return .done(on: container)

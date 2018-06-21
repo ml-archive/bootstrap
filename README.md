@@ -51,6 +51,8 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
         tags.use(AlertTag(), as: "bs:alert")
         tags.use(InputTag(), as: "bs:input")
         tags.use(BadgeTag(), as: "bs:badge")
+        tags.use(BreadCrumbTag(), as: "bs:breadCrumb")
+        tags.use(BreadCrumbItemTag(), as: "bs:breadCrumbItem")
 
         return tags
     }
@@ -65,6 +67,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
 - [Button Group](#button-group)
 - [Button Toolbar](#button-toolbar)
 - [Input](#input)
+- [Breadcrumb](#breadcrumb)
 
 ### Alert
 
@@ -117,6 +120,15 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
 
 ```
 #bs:input(type?, classExtras?, attributes?)
+```
+
+### Breadcrumb
+
+```
+#bs:breadcrumb(classExtras?, attributes?) {
+  #bs:breadcrumbItem(classExtras?, attributes?) { <a href="/"> Home </a> }
+  #bs:breadcrumbItem(classExtras?, attributes?) { Profile }
+}
 ```
 
 ## 🏆 Credits
