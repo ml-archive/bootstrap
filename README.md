@@ -68,6 +68,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
 - [Button Toolbar](#button-toolbar)
 - [Input](#input)
 - [Breadcrumb](#breadcrumb)
+- [Textarea](#textarea)
 
 ### Alert
 
@@ -129,6 +130,12 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
   #bs:breadcrumbItem(classExtras?, attributes?) { <a href="/"> Home </a> }
   #bs:breadcrumbItem(classExtras?, attributes?) { Profile }
 }
+```
+
+### Textarea
+
+```
+#bs:textArea(classExtras?, attributes?, value?)
 ```
 
 ## 🏆 Credits
