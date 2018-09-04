@@ -8,6 +8,8 @@ public final class InputTag: TagRenderer {
         case password
         case hidden
         case file
+        case checkbox
+        case radio
     }
 
     public func render(tag: TagContext) throws -> Future<TemplateData> {
