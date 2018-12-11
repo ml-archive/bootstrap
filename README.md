@@ -35,25 +35,13 @@ try services.register(BootstrapProvider())
 
 ### Adding the Leaf tags
 
-#### Using a shared Leaf tag config
-
-This package supports using a shared Leaf tag config which removes the task of registering the tags from the consumer of this package. Please see [this description](https://github.com/nodes-vapor/sugar#mutable-leaf-tag-config) if you want to use this.
-
-#### Manually registering the Leaf tag(s)
+In order to render the Bootstrap elements, you will need to add the Bootstrap Leaf tags:
 
 ```swift 
 public func configure(_ config: inout Config, _ env: inout Environment, _ services: inout Services) throws {
     services.register { _ -> LeafTagConfig in
         var tags = LeafTagConfig.default()
-        tags.use(ButtonTag(), as: "bs:button")
-        tags.use(ButtonGroupTag(), as: "bs:buttonGroup")
-        tags.use(ButtonToolbarTag(), as: "bs:buttonToolbar")
-        tags.use(AlertTag(), as: "bs:alert")
-        tags.use(InputTag(), as: "bs:input")
-        tags.use(BadgeTag(), as: "bs:badge")
-        tags.use(BreadCrumbTag(), as: "bs:breadCrumb")
-        tags.use(BreadCrumbItemTag(), as: "bs:breadCrumbItem")
-
+        tags.useBootstrapLeafTags()
         return tags
     }
 }
