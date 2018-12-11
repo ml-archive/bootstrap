@@ -9,12 +9,16 @@ public final class BootstrapProvider: Provider {
 
     public func register(_ services: inout Services) throws {
         try services.register(LeafProvider())
-        try services.register(MutableLeafTagConfigProvider())
     }
 
     public func didBoot(_ container: Container) throws -> EventLoopFuture<Void> {
-        let tags: MutableLeafTagConfig = try container.make()
-        tags.use([
+        return .done(on: container)
+    }
+}
+
+public extension LeafTagConfig {
+    public mutating func useBootstrapLeafTags() {
+        use([
             "bs:button": ButtonTag(),
             "bs:buttonGroup": ButtonGroupTag(),
             "bs:buttonToolbar": ButtonToolbarTag(),
@@ -25,8 +29,6 @@ public final class BootstrapProvider: Provider {
             "bs:breadCrumbItem": BreadCrumbItemTag(),
             "bs:textArea": TextAreaTag()
         ])
-
-        return .done(on: container)
     }
 }
 
