@@ -9,24 +9,28 @@ public final class BootstrapProvider: Provider {
 
     public func register(_ services: inout Services) throws {
         try services.register(LeafProvider())
-        try services.register(MutableLeafTagConfigProvider())
     }
 
     public func didBoot(_ container: Container) throws -> EventLoopFuture<Void> {
-        let tags: MutableLeafTagConfig = try container.make()
-        tags.use([
-            "bs:button": ButtonTag(),
-            "bs:buttonGroup": ButtonGroupTag(),
-            "bs:buttonToolbar": ButtonToolbarTag(),
-            "bs:alert": AlertTag(),
-            "bs:input": InputTag(),
-            "bs:badge": BadgeTag(),
-            "bs:breadCrumb": BreadCrumbTag(),
-            "bs:breadCrumbItem": BreadCrumbItemTag(),
-            "bs:textArea": TextAreaTag()
-        ])
-
         return .done(on: container)
+    }
+}
+
+public extension LeafTagConfig {
+    public mutating func useBootstrapLeafTags() {
+        return use([
+          "bs:button": ButtonTag(),
+          "bs:buttonGroup": ButtonGroupTag(),
+          "bs:buttonToolbar": ButtonToolbarTag(),
+          "bs:alert": AlertTag(),
+          "bs:input": InputTag(),
+          "bs:badge": BadgeTag(),
+          "bs:breadCrumb": BreadCrumbTag(),
+          "bs:breadCrumbItem": BreadCrumbItemTag(),
+          "bs:textArea": TextAreaTag(),
+          "bs:formRadio": FormRadio(),
+          "bs:formCheckbox": FormCheckbox()
+        ])
     }
 }
 
