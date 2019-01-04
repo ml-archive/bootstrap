@@ -18,7 +18,7 @@ public final class BootstrapProvider: Provider {
 
 public extension LeafTagConfig {
     public mutating func useBootstrapLeafTags() {
-        return use([
+        use([
           "bs:button": ButtonTag(),
           "bs:buttonGroup": ButtonGroupTag(),
           "bs:buttonToolbar": ButtonToolbarTag(),
