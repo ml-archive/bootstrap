@@ -7,7 +7,6 @@ public final class InputTag: TagRenderer {
         case email
         case password
         case hidden
-        case file
     }
 
     public func render(tag: TagContext) throws -> Future<TemplateData> {

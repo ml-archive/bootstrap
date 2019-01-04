@@ -29,7 +29,8 @@ public extension LeafTagConfig {
           "bs:breadCrumbItem": BreadCrumbItemTag(),
           "bs:textArea": TextAreaTag(),
           "bs:formRadio": FormRadio(),
-          "bs:formCheckbox": FormCheckbox()
+          "bs:formCheckbox": FormCheckbox(),
+          "bs:formFile": FormFile()
         ])
     }
 }
