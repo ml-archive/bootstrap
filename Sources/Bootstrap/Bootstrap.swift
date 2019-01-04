@@ -18,16 +18,18 @@ public final class BootstrapProvider: Provider {
 
 public extension LeafTagConfig {
     public mutating func useBootstrapLeafTags() {
-        use([
-            "bs:button": ButtonTag(),
-            "bs:buttonGroup": ButtonGroupTag(),
-            "bs:buttonToolbar": ButtonToolbarTag(),
-            "bs:alert": AlertTag(),
-            "bs:input": InputTag(),
-            "bs:badge": BadgeTag(),
-            "bs:breadCrumb": BreadCrumbTag(),
-            "bs:breadCrumbItem": BreadCrumbItemTag(),
-            "bs:textArea": TextAreaTag()
+        return use([
+          "bs:button": ButtonTag(),
+          "bs:buttonGroup": ButtonGroupTag(),
+          "bs:buttonToolbar": ButtonToolbarTag(),
+          "bs:alert": AlertTag(),
+          "bs:input": InputTag(),
+          "bs:badge": BadgeTag(),
+          "bs:breadCrumb": BreadCrumbTag(),
+          "bs:breadCrumbItem": BreadCrumbItemTag(),
+          "bs:textArea": TextAreaTag(),
+          "bs:formRadio": FormRadio(),
+          "bs:formCheckbox": FormCheckbox()
         ])
     }
 }

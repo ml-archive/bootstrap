@@ -12,7 +12,7 @@ public final class InputTag: TagRenderer {
 
     public func render(tag: TagContext) throws -> Future<TemplateData> {
         var inputType = Keys.text.rawValue
-        var classes = "form-control"
+        var classes = ""
         var attributes = ""
 
         try tag.requireNoBody()
@@ -35,7 +35,8 @@ public final class InputTag: TagRenderer {
             throw tag.error(reason: "Wrong argument given: \(inputType)")
         }
 
-        let button = "<input type='\(parsedType)' class='\(classes)' \(attributes)>"
+        let c = "form-control \(classes)"
+        let button = "<input type='\(parsedType)' class='\(c)' \(attributes)>"
         return Future.map(on: tag) { return .string(button) }
     }
 }
