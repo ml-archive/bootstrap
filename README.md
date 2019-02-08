@@ -13,9 +13,26 @@ This package wraps Bootstrap elements into convenient Leaf-Tags.
 
 # Installation
 
-Update your `Package.swift` file.
+Add `Bootstrap` to the package dependencies (in your `Package.swift` file):
+
 ```swift
-.package(url: "https://github.com/nodes-vapor/bootstrap.git", from: "1.0.0")
+dependencies: [
+    ...,
+    .package(url: "https://github.com/nodes-vapor/bootstrap.git", from: "4.0.0-beta")
+]
+```
+
+as well as to your target (e.g. "App"):
+
+```swift
+targets: [
+    ...
+    .target(
+        name: "App",
+        dependencies: [... "Bootstrap" ...]
+    ),
+    ...
+]
 ```
 
 ## Getting started 🚀
