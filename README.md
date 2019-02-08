@@ -27,12 +27,6 @@ import Bootstrap
 import Leaf
 ```
 
-### Adding the provider
-
-```swift
-try services.register(BootstrapProvider())
-```
-
 ### Adding the Leaf tags
 
 In order to render the Bootstrap elements, you will need to add the Bootstrap Leaf tags:

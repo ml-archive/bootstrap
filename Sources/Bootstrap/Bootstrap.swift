@@ -2,21 +2,7 @@ import Leaf
 import Sugar
 import Vapor
 
-public final class BootstrapProvider: Provider {
-    public static let repositoryName = "bootstrap"
-
-    public init() {}
-
-    public func register(_ services: inout Services) throws {
-        try services.register(LeafProvider())
-    }
-
-    public func didBoot(_ container: Container) throws -> EventLoopFuture<Void> {
-        return .done(on: container)
-    }
-}
-
-public extension LeafTagConfig {
+extension LeafTagConfig {
     public mutating func useBootstrapLeafTags() {
         use([
           "bs:button": ButtonTag(),
