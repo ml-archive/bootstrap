@@ -35,12 +35,6 @@ public extension LeafTagConfig {
     }
 }
 
-extension Array {
-    subscript(safe index: Int) -> Element? {
-        return indices.contains(index) ? self[index] : nil
-    }
-}
-
 extension TagContext {
     /// Throws an error if the parameter count is larger than the supplied number `n`.
     public func requireParameterCount(upTo n: Int) throws {
