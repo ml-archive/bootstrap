@@ -42,7 +42,7 @@ extension Array {
 }
 
 extension TagContext {
-    /// Throws an error if the parameter count contains more then the supplied number `n`.
+    /// Throws an error if the parameter count is larger than the supplied number `n`.
     public func requireParameterCount(upTo n: Int) throws {
         guard parameters.count <= n else {
             throw error(reason: "Invalid parameter count: \(parameters.count)/\(n)")
