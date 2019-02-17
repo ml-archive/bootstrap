@@ -18,7 +18,7 @@ public final class BadgeTag: TagRenderer {
                 case 0: style = param
                 case 1: classes = param
                 case 2: attributes = param
-                default: ()
+                default: break
                 }
             }
         }
