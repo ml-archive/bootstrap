@@ -1,38 +1,3 @@
-<<<<<<< ours:Sources/Bootstrap/Bootstrap.swift
-import Leaf
-import Sugar
-import Vapor
-
-extension LeafTagConfig {
-    public mutating func useBootstrapLeafTags() {
-        use([
-          "bs:button": ButtonTag(),
-          "bs:buttonGroup": ButtonGroupTag(),
-          "bs:buttonToolbar": ButtonToolbarTag(),
-          "bs:alert": AlertTag(),
-          "bs:input": InputTag(),
-          "bs:badge": BadgeTag(),
-          "bs:breadCrumb": BreadCrumbTag(),
-          "bs:breadCrumbItem": BreadCrumbItemTag(),
-          "bs:textArea": TextAreaTag(),
-          "bs:formRadio": FormRadio(),
-          "bs:formCheckbox": FormCheckbox(),
-          "bs:formFile": FormFile()
-        ])
-    }
-}
-
-extension TagContext {
-    /// Throws an error if the parameter count is larger than the supplied number `n`.
-    public func requireParameterCount(upTo n: Int) throws {
-        guard parameters.count <= n else {
-            throw error(reason: "Invalid parameter count: \(parameters.count)/\(n)")
-        }
-    }
-}
-
-=======
->>>>>>> theirs:Sources/Bootstrap/ColorKeys.swift
 /// Bootstrap Color Definitions
 enum ColorKeys: String {
     /// Bootstrap Primary Color
