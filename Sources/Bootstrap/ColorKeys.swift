@@ -1,3 +1,4 @@
+<<<<<<< ours:Sources/Bootstrap/Bootstrap.swift
 import Leaf
 import Sugar
 import Vapor
@@ -30,6 +31,8 @@ extension TagContext {
     }
 }
 
+=======
+>>>>>>> theirs:Sources/Bootstrap/ColorKeys.swift
 /// Bootstrap Color Definitions
 enum ColorKeys: String {
     /// Bootstrap Primary Color
