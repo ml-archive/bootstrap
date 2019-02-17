@@ -1,4 +1,5 @@
 import Leaf
+import Sugar
 import TemplateKit
 
 /// Button Toolbar
@@ -18,12 +19,9 @@ public final class ButtonToolbarTag: TagRenderer {
                 param.isEmpty == false {
 
                 switch index {
-                case 0:
-                    classes = param
-                case 1:
-                    aria = param
-                default:
-                    break
+                case 0: classes = param
+                case 1: aria = param
+                default: break
                 }
             }
         }

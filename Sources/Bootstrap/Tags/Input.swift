@@ -1,4 +1,5 @@
 import Leaf
+import Sugar
 import TemplateKit
 
 public final class InputTag: TagRenderer {
@@ -25,7 +26,7 @@ public final class InputTag: TagRenderer {
                 case 0: inputType = param
                 case 1: classes = param
                 case 2: attributes = param
-                default: ()
+                default: break
                 }
             }
         }
@@ -36,6 +37,6 @@ public final class InputTag: TagRenderer {
 
         let c = "form-control \(classes)"
         let button = "<input type='\(parsedType)' class='\(c)' \(attributes)>"
-        return Future.map(on: tag) { return .string(button) }
+        return tag.future(.string(button))
     }
 }

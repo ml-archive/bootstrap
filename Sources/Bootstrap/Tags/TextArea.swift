@@ -1,4 +1,5 @@
 import Leaf
+import Sugar
 import TemplateKit
 
 public final class TextAreaTag: TagRenderer {
@@ -21,12 +22,12 @@ public final class TextAreaTag: TagRenderer {
                 case 0: classes = param
                 case 1: attributes = param
                 case 2: value = param
-                default: ()
+                default: break
                 }
             }
         }
 
         let html = "<textarea class='\(classes)' \(attributes)>\(value)</textarea>"
-        return Future.map(on: tag) { return .string(html) }
+        return tag.future(.string(html))
     }
 }

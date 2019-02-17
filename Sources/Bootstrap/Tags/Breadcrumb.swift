@@ -1,4 +1,5 @@
 import Leaf
+import Sugar
 import TemplateKit
 
 public final class BreadCrumbTag: TagRenderer {
@@ -15,7 +16,7 @@ public final class BreadCrumbTag: TagRenderer {
                 switch index {
                 case 0: classes = param
                 case 1: attributes = param
-                default: ()
+                default: break
                 }
             }
         }
@@ -49,7 +50,7 @@ public final class BreadCrumbItemTag: TagRenderer {
                 switch index {
                 case 0: classes = param
                 case 1: attributes = param
-                default: ()
+                default: break
                 }
             }
         }

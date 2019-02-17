@@ -15,23 +15,27 @@ public final class ButtonGroupTag: TagRenderer {
 
         try tag.requireParameterCount(upTo: ButtonGroupTag.paramCount)
 
-        var group = GroupKeys.standard.rawValue
+        var group = GroupKeys.standard
         var classes: String?
         var aria = UUID().uuidString
 
         if tag.parameters.count > 0 {
             guard let param = tag.parameters[0].bool else {
-                throw tag.error(reason: "Wrong type given (expected a bool): \(type(of: tag.parameters[0]))")
+                throw tag.error(
+                    reason: "Wrong type given (expected a bool): \(type(of: tag.parameters[0]))"
+                )
             }
 
             if param {
-                group = GroupKeys.vertical.rawValue
+                group = .vertical
             }
         }
 
         if tag.parameters.count > 1 {
             guard let param = tag.parameters[1].string else {
-                throw tag.error(reason: "Wrong type given (expected a string): \(type(of: tag.parameters[1]))")
+                throw tag.error(
+                    reason: "Wrong type given (expected a string): \(type(of: tag.parameters[1]))"
+                )
             }
 
             if param.count > 0 {
@@ -41,7 +45,9 @@ public final class ButtonGroupTag: TagRenderer {
 
         if tag.parameters.count > 2 {
             guard let param = tag.parameters[2].string else {
-                throw tag.error(reason: "Wrong type given (expected a string): \(type(of: tag.parameters[2]))")
+                throw tag.error(
+                    reason: "Wrong type given (expected a string): \(type(of: tag.parameters[2]))"
+                )
             }
 
             if param.count > 0 {
@@ -57,7 +63,7 @@ public final class ButtonGroupTag: TagRenderer {
                 throw tag.error(reason: "Body Data Expected")
             }
 
-            var group = "<div class='\(group)"
+            var group = "<div class='\(group.rawValue)"
             if let classes = classes {
                 group += " \(classes)"
             }

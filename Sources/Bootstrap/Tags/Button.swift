@@ -1,4 +1,5 @@
 import Leaf
+import Sugar
 import TemplateKit
 
 public final class ButtonTag: TagRenderer {
@@ -23,7 +24,7 @@ public final class ButtonTag: TagRenderer {
                 case 0: style = param
                 case 1: classes = param
                 case 2: attributes = param
-                default: ()
+                default: break
                 }
             }
         }
