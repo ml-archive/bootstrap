@@ -1,4 +1,5 @@
 import Leaf
+import Sugar
 import TemplateKit
 
 public final class FormFile: TagRenderer {
