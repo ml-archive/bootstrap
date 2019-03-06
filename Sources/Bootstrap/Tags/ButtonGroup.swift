@@ -1,4 +1,5 @@
 import Leaf
+import Sugar
 import TemplateKit
 
 /// Bootstrap Button Group Tag
