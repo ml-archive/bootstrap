@@ -14,7 +14,12 @@ extension LeafTagConfig {
             "bs:formFile": FormFile(),
             "bs:formRadio": FormRadio(),
             "bs:input": InputTag(),
-            "bs:textArea": TextAreaTag()
+            "bs:textArea": TextAreaTag(),
+            "bs:card": CardTag(),
+            "bs:card:outer": CardOuterTag(),
+            "bs:card:header": CardHeaderTag(),
+            "bs:card:body": CardBodyTag(),
+            "bs:card:footer": CardFooterTag(),
         ])
     }
 }
