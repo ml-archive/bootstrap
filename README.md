@@ -137,6 +137,22 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
 #bs:textArea(classExtras?, attributes?, value?)
 ```
 
+### Card
+
+```
+#bs:card(title?, classExtras?, attributes?) { <card body> }
+```
+
+or
+
+```
+#bs:card:outer(title?, classExtras?, attributes?) {
+	#bs:card:header(classExtras?, attributes?) { <card header, if more than a simple string should be rendered> }
+	#bs:card:body(classExtras?, attributes?) { <card contents> }
+	#bs:card:footer(classExtras?, attributes?) { <card footer> }
+}
+```
+
 ## 🏆 Credits
 
 This package is developed and maintained by the Vapor team at [Nodes](https://www.nodesagency.com). The package owner for this project is [Martin](http://github.com/martinlasek).
