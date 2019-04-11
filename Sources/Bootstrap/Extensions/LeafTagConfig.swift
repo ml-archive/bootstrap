@@ -19,7 +19,7 @@ extension LeafTagConfig {
             "bs:formFile": FormFile(),
             "bs:formRadio": FormRadio(),
             "bs:input": InputTag(),
-            "bs:textArea": TextAreaTag(),
+            "bs:textArea": TextAreaTag()
         ])
     }
 }
