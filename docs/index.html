@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="Bootstrap  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">Bootstrap Docs</a> (57% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">Bootstrap Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Bootstrap  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/AlertTag.html">AlertTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/BadgeTag.html">BadgeTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/BreadCrumbItemTag.html">BreadCrumbItemTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/BreadCrumbTag.html">BreadCrumbTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ButtonGroupTag.html">ButtonGroupTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ButtonTag.html">ButtonTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ButtonTag/Keys.html">– Keys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ButtonToolbarTag.html">ButtonToolbarTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/CardBodyTag.html">CardBodyTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/CardFooterTag.html">CardFooterTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/CardHeaderTag.html">CardHeaderTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/CardOuterTag.html">CardOuterTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/CardTag.html">CardTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/FormCheckbox.html">FormCheckbox</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/FormFile.html">FormFile</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/FormRadio.html">FormRadio</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/InputTag.html">InputTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TextAreaTag.html">TextAreaTag</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/LeafTagConfig.html">LeafTagConfig</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='bootstrap' class='heading'>Bootstrap 🍃</h1>
+
+<p><a href="http://swift.org"><img src="https://img.shields.io/badge/Swift-4.1-brightgreen.svg" alt="Swift Version"></a>
+<a href="http://vapor.codes"><img src="https://img.shields.io/badge/Vapor-3-30B6FC.svg" alt="Vapor Version"></a>
+<a href="https://circleci.com/gh/nodes-vapor/bootstrap"><img src="https://circleci.com/gh/nodes-vapor/bootstrap/tree/master.svg?style=shield" alt="Circle CI"></a>
+<a href="https://codebeat.co/projects/github-com-nodes-vapor-bootstrap-master"><img src="https://codebeat.co/badges/40b8811e-2949-427a-a2a7-437209475f7d" alt="codebeat badge"></a>
+<a href="https://codecov.io/gh/nodes-vapor/bootstrap"><img src="https://codecov.io/gh/nodes-vapor/bootstrap/branch/master/graph/badge.svg" alt="codecov"></a>
+<a href="http://clayallsopp.github.io/readme-score?url=https://github.com/nodes-vapor/bootstrap"><img src="http://readme-score-api.herokuapp.com/score.svg?url=https://github.com/nodes-vapor/bootstrap" alt="Readme Score"></a>
+<a href="https://raw.githubusercontent.com/nodes-vapor/bootstrap/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a></p>
+
+<p>This package wraps Bootstrap elements into convenient Leaf-Tags.</p>
+<h1 id='installation' class='heading'>Installation</h1>
+
+<p>Add <code>Bootstrap</code> to the package dependencies (in your <code>Package.swift</code> file):</p>
+<pre class="highlight swift"><code><span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
+    <span class="o">...</span><span class="p">,</span>
+    <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/nodes-vapor/bootstrap.git"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"4.0.0-beta"</span><span class="p">)</span>
+<span class="p">]</span>
+</code></pre>
+
+<p>as well as to your target (e.g. <q>App</q>):</p>
+<pre class="highlight swift"><code><span class="nv">targets</span><span class="p">:</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="o">.</span><span class="nf">target</span><span class="p">(</span>
+        <span class="nv">name</span><span class="p">:</span> <span class="s">"App"</span><span class="p">,</span>
+        <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span><span class="o">...</span> <span class="s">"Bootstrap"</span> <span class="o">...</span><span class="p">]</span>
+    <span class="p">),</span>
+    <span class="o">...</span>
+<span class="p">]</span>
+</code></pre>
+<h2 id='getting-started' class='heading'>Getting started 🚀</h2>
+
+<p>First import Bootstrap and Leaf inside your <code>configure.swift</code></p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Bootstrap</span>
+<span class="kd">import</span> <span class="kt">Leaf</span>
+</code></pre>
+<h3 id='adding-the-leaf-tags' class='heading'>Adding the Leaf tags</h3>
+
+<p>In order to render the Bootstrap elements, you will need to add the Bootstrap Leaf tags:</p>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">configure</span><span class="p">(</span><span class="n">_</span> <span class="nv">config</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Config</span><span class="p">,</span> <span class="n">_</span> <span class="nv">env</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Environment</span><span class="p">,</span> <span class="n">_</span> <span class="nv">services</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Services</span><span class="p">)</span> <span class="k">throws</span> <span class="p">{</span>
+    <span class="n">services</span><span class="o">.</span><span class="n">register</span> <span class="p">{</span> <span class="n">_</span> <span class="o">-&gt;</span> <span class="kt">LeafTagConfig</span> <span class="k">in</span>
+        <span class="k">var</span> <span class="nv">tags</span> <span class="o">=</span> <span class="kt">LeafTagConfig</span><span class="o">.</span><span class="nf">default</span><span class="p">()</span>
+        <span class="n">tags</span><span class="o">.</span><span class="nf">useBootstrapLeafTags</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">tags</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id='supported-tags' class='heading'>Supported tags</h2>
+
+<ul>
+<li><a href="#alert">Alert</a></li>
+<li><a href="#badge">Badge</a></li>
+<li><a href="#button">Button</a></li>
+<li><a href="#button-group">Button Group</a></li>
+<li><a href="#button-toolbar">Button Toolbar</a></li>
+<li><a href="#input">Input</a></li>
+<li><a href="#breadcrumb">Breadcrumb</a></li>
+<li><a href="#textarea">Textarea</a></li>
+</ul>
+<h3 id='alert' class='heading'>Alert</h3>
+<pre class="highlight plaintext"><code>#bs:alert() { alert text }
+</code></pre>
+<h3 id='badge' class='heading'>Badge</h3>
+<pre class="highlight plaintext"><code>#bs:badge(type?, classExtras?, attributes?) { badge text }
+</code></pre>
+<h3 id='button' class='heading'>Button</h3>
+<pre class="highlight plaintext"><code>#bs:button(type?, classExtras?, attributes?) { btn text }
+</code></pre>
+<h3 id='button-group' class='heading'>Button Group</h3>
+<pre class="highlight plaintext"><code>#bs:buttonGroup(isVertical, classExtras?, Aria?) { }
+</code></pre>
+<pre class="highlight plaintext"><code>#bs:buttonGroup(false, "btn-group-sm") {
+    #bs:button() { First Option }
+    #bs:button("danger") { Second Option}
+    #bs:button() { Third Option}
+}
+
+</code></pre>
+<h3 id='button-toolbar' class='heading'>Button Toolbar</h3>
+<pre class="highlight plaintext"><code>#bs:buttonToolbar(classExtras?, Aria?) { }
+</code></pre>
+<pre class="highlight plaintext"><code>#bs:buttonToolbar() {
+    #bs:button() { First Option }
+    #bs:button("danger") { Second Option}
+    #bs:button() { Third Option}
+}
+</code></pre>
+<h3 id='input' class='heading'>Input</h3>
+<pre class="highlight plaintext"><code>#bs:input(type?, classExtras?, attributes?)
+</code></pre>
+<h3 id='breadcrumb' class='heading'>Breadcrumb</h3>
+<pre class="highlight plaintext"><code>#bs:breadcrumb(classExtras?, attributes?) {
+  #bs:breadcrumbItem(classExtras?, attributes?) { &lt;a href="/"&gt; Home &lt;/a&gt; }
+  #bs:breadcrumbItem(classExtras?, attributes?) { Profile }
+}
+</code></pre>
+<h3 id='textarea' class='heading'>Textarea</h3>
+<pre class="highlight plaintext"><code>#bs:textArea(classExtras?, attributes?, value?)
+</code></pre>
+<h3 id='card' class='heading'>Card</h3>
+<pre class="highlight plaintext"><code>#bs:card(title?, classExtras?, attributes?) { &lt;card body&gt; }
+</code></pre>
+
+<p>or</p>
+<pre class="highlight plaintext"><code>#bs:card:outer(title?, classExtras?, attributes?) {
+    #bs:card:header(classExtras?, attributes?) { &lt;card header, if more than a simple string should be rendered&gt; }
+    #bs:card:body(classExtras?, attributes?) { &lt;card contents&gt; }
+    #bs:card:footer(classExtras?, attributes?) { &lt;card footer&gt; }
+}
+</code></pre>
+<h2 id='credits' class='heading'>🏆 Credits</h2>
+
+<p>This package is developed and maintained by the Vapor team at <a href="https://www.nodesagency.com">Nodes</a>. The package owner for this project is <a href="http://github.com/martinlasek">Martin</a>.</p>
+<h2 id='license' class='heading'>📄 License</h2>
+
+<p>This package is open-sourced software licensed under the <a href="http://opensource.org/licenses/MIT">MIT license</a></p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-08-01)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.10.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

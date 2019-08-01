@@ -1,0 +1,117 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/emilmarashliev/Projects/bootstrap/Sources/Bootstrap/Extensions/LeafTagConfig.swift",
+      "line": 4,
+      "symbol": "LeafTagConfig.useBootstrapLeafTags()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/emilmarashliev/Projects/bootstrap/Sources/Bootstrap/Tags/Badge.swift",
+      "line": 5,
+      "symbol": "BadgeTag",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/emilmarashliev/Projects/bootstrap/Sources/Bootstrap/Tags/Breadcrumb.swift",
+      "line": 5,
+      "symbol": "BreadCrumbTag",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/emilmarashliev/Projects/bootstrap/Sources/Bootstrap/Tags/Breadcrumb.swift",
+      "line": 39,
+      "symbol": "BreadCrumbItemTag",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/emilmarashliev/Projects/bootstrap/Sources/Bootstrap/Tags/Button.swift",
+      "line": 5,
+      "symbol": "ButtonTag",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/emilmarashliev/Projects/bootstrap/Sources/Bootstrap/Tags/Button.swift",
+      "line": 8,
+      "symbol": "ButtonTag.Keys.link",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/emilmarashliev/Projects/bootstrap/Sources/Bootstrap/Tags/Card.swift",
+      "line": 32,
+      "symbol": "CardTag",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/emilmarashliev/Projects/bootstrap/Sources/Bootstrap/Tags/Card.swift",
+      "line": 50,
+      "symbol": "CardOuterTag",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/emilmarashliev/Projects/bootstrap/Sources/Bootstrap/Tags/Card.swift",
+      "line": 94,
+      "symbol": "CardHeaderTag",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/emilmarashliev/Projects/bootstrap/Sources/Bootstrap/Tags/Card.swift",
+      "line": 100,
+      "symbol": "CardBodyTag",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/emilmarashliev/Projects/bootstrap/Sources/Bootstrap/Tags/Card.swift",
+      "line": 106,
+      "symbol": "CardFooterTag",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/emilmarashliev/Projects/bootstrap/Sources/Bootstrap/Tags/FormCheckbox.swift",
+      "line": 5,
+      "symbol": "FormCheckbox",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/emilmarashliev/Projects/bootstrap/Sources/Bootstrap/Tags/FormFile.swift",
+      "line": 5,
+      "symbol": "FormFile",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/emilmarashliev/Projects/bootstrap/Sources/Bootstrap/Tags/FormRadio.swift",
+      "line": 4,
+      "symbol": "FormRadio",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/emilmarashliev/Projects/bootstrap/Sources/Bootstrap/Tags/Input.swift",
+      "line": 5,
+      "symbol": "InputTag",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/emilmarashliev/Projects/bootstrap/Sources/Bootstrap/Tags/TextArea.swift",
+      "line": 5,
+      "symbol": "TextAreaTag",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/emilmarashliev/Projects/bootstrap"
+}
