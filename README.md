@@ -18,7 +18,7 @@ Add `Bootstrap` to the package dependencies (in your `Package.swift` file):
 ```swift
 dependencies: [
     ...,
-    .package(url: "https://github.com/nodes-vapor/bootstrap.git", from: "4.0.0-beta")
+    .package(url: "https://github.com/nodes-vapor/bootstrap.git", from: "4.0.0")
 ]
 ```
 
@@ -155,8 +155,7 @@ or
 
 ## 🏆 Credits
 
-This package is developed and maintained by the Vapor team at [Nodes](https://www.nodesagency.com). The package owner for this project is [Martin](http://github.com/martinlasek).
-
+This package is developed and maintained by the Vapor team at [Nodes](https://www.nodesagency.com).
 
 ## 📄 License
 
